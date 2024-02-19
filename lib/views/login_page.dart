@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:scholar_chat/custom_widgets/custom%20_container.dart';
 import 'package:scholar_chat/helper/showalert.dart';
-import 'package:scholar_chat/pages/resgister_page.dart';
+import 'package:scholar_chat/views/resgister_page.dart';
 import 'package:scholar_chat/custom_widgets/custom_button.dart';
 
 import '../constants.dart';
@@ -62,7 +62,7 @@ class LoginPage extends StatelessWidget {
                             onchanged: (text) {
                               email = text;
                             },
-                            Validator: (text) {
+                            validator: (text) {
                               if (text == null || text.isEmpty) {
                                 return 'Please enter your email.';
                               }
@@ -81,7 +81,7 @@ class LoginPage extends StatelessWidget {
                             onchanged: (text) {
                               password = text;
                             },
-                            Validator: (text) {
+                            validator: (text) {
                               if (text == null || text.isEmpty) {
                                 return 'Please enter your password.';
                               }

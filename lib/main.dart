@@ -1,25 +1,25 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:scholar_chat/cubits/login_cubit/login_cubit.dart';
-import 'package:scholar_chat/pages/chat_page.dart';
-import 'package:scholar_chat/pages/login_page.dart';
-import 'package:scholar_chat/pages/resgister_page.dart';
-
 import 'cubits/Signup_cubit/signup_cubit.dart';
 import 'cubits/chat_cubit.dart';
+import 'views/chat_page.dart';
+import 'views/login_page.dart';
+import 'views/resgister_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
-        systemNavigationBarColor: Colors.white // Set your desired color here
+        systemNavigationBarColor:
+            Color(0xFF3B1B1B) // Set your desired color here
         ),
   );
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  // ignore: prefer_const_constructors
-  runApp(ScholarChat());
+
+  runApp(const ScholarChat());
 }
 
 class ScholarChat extends StatelessWidget {

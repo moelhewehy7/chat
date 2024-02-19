@@ -3,13 +3,18 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class CustomTextFormField extends StatelessWidget {
   CustomTextFormField(
-      {this.label, this.onchanged, this.Validator, this.obscureText = false});
+      {Key? key,
+      this.label,
+      this.onchanged,
+      this.validator,
+      this.obscureText = false})
+      : super(key: key);
 
   String? label;
 
   // it cant be Voidcallback becasue type is string
   Function(String)? onchanged;
-  String? Function(String?)? Validator;
+  String? Function(String?)? validator;
   bool? obscureText;
 
   @override
@@ -19,7 +24,7 @@ class CustomTextFormField extends StatelessWidget {
           obscureText!, // we can give it intial value in the constructor
       //which means it can accept nullable values. or The obscureText: obscureText ?? false line uses the null-aware operator (??) to assign a default value of false in case the obscureText value is null.
       onChanged: onchanged,
-      validator: Validator,
+      validator: validator,
       cursorColor: Colors.black,
       decoration: InputDecoration(
         label: Text(

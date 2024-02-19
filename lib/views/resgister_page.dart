@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:scholar_chat/cubits/Signup_cubit/signup_cubit.dart';
 import 'package:scholar_chat/custom_widgets/custom%20_container.dart';
-import 'package:scholar_chat/pages/chat_page.dart';
+import 'package:scholar_chat/views/chat_page.dart';
 import 'package:scholar_chat/custom_widgets/custom_button.dart';
 
 import '../constants.dart';
@@ -58,7 +58,7 @@ class Register extends StatelessWidget {
                               onchanged: (text) {
                                 email = text;
                               },
-                              Validator: (text) {
+                              validator: (text) {
                                 if (text == null || text.isEmpty) {
                                   return 'Please enter your email.';
                                 }
@@ -77,7 +77,7 @@ class Register extends StatelessWidget {
                               onchanged: (text) {
                                 password = text;
                               },
-                              Validator: (text) {
+                              validator: (text) {
                                 if (text == null || text.isEmpty) {
                                   return 'Please enter your password.';
                                 }

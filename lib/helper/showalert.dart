@@ -24,7 +24,8 @@ Future<void> showAlert(
             },
             child: Text(
               buttonText,
-              style: TextStyle(fontSize: 13, color: Colors.white),textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 13, color: Colors.white),
+              textAlign: TextAlign.center,
             ),
             style: ElevatedButton.styleFrom(
               fixedSize: Size(85, 14),

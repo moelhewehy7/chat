@@ -70,7 +70,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '125999704398',
     projectId: 'chatapp-fe825',
     storageBucket: 'chatapp-fe825.appspot.com',
-    androidClientId: '125999704398-7pp5292gcqb3rn45tgr8539mu2suatl7.apps.googleusercontent.com',
+    androidClientId:
+        '125999704398-7pp5292gcqb3rn45tgr8539mu2suatl7.apps.googleusercontent.com',
     iosBundleId: 'com.example.chatApp',
   );
 }
