@@ -170,7 +170,7 @@ class _LoginPageState extends State<LoginPage> {
                               height: 40,
                             ),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 SigninChoicesContainer(
                                     image: "assets/images/google.png",
