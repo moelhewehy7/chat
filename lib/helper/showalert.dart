@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 Future<void> showAlert(
   BuildContext context,
@@ -19,18 +20,19 @@ Future<void> showAlert(
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
         actions: [
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            style: ElevatedButton.styleFrom(
-              fixedSize: const Size(85, 14),
-              backgroundColor: const Color(0xFF1D1D1D),
-            ),
-            child: Text(
-              buttonText,
-              style: const TextStyle(fontSize: 13, color: Colors.white),
-              textAlign: TextAlign.center,
+          Expanded(
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF1D1D1D),
+              ),
+              child: Text(
+                buttonText,
+                style: const TextStyle(fontSize: 13, color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
         ],
