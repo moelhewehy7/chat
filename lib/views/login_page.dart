@@ -10,6 +10,7 @@ import '../constants.dart';
 import '../cubits/chat_cubit/chat_cubit.dart';
 import '../cubits/login_cubit/login_cubit.dart';
 import '../custom_widgets/custom_text_field.dart';
+import '../custom_widgets/signin_choices_container.dart';
 import 'chat_page.dart';
 
 // ignore: must_be_immutable
@@ -29,8 +30,8 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    // double height = MediaQuery.of(context).size.height;
-    // double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: kPrimaryColor,
@@ -171,60 +172,16 @@ class _LoginPageState extends State<LoginPage> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Container(
-                                  height: 50,
-                                  width: 175,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    border: Border.all(
-                                      color: const Color(0xffcbcecf),
-                                      width: 1,
-                                    ),
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Image.asset(
-                                        "assets/images/google.png",
-                                        scale: 30,
-                                      ),
-                                      const SizedBox(width: 8),
-                                      const Text(
-                                        "Google",
-                                        style: TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w400),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Container(
-                                  height: 50,
-                                  width: 175,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    border: Border.all(
-                                      color: const Color(0xffcbcecf),
-                                      width: 1,
-                                    ),
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Image.asset(
-                                        "assets/images/facebook.png",
-                                        scale: 30,
-                                      ),
-                                      const SizedBox(width: 8),
-                                      const Text(
-                                        "Facebook",
-                                        style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w400),
-                                      ),
-                                    ],
-                                  ),
-                                )
+                                SigninChoicesContainer(
+                                    image: "assets/images/google.png",
+                                    text: "Google",
+                                    height: height,
+                                    width: width),
+                                SigninChoicesContainer(
+                                    image: "assets/images/facebook.png",
+                                    text: "Facebook",
+                                    height: height,
+                                    width: width),
                               ],
                             ),
                             const SizedBox(
@@ -261,5 +218,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
+
+
 //"We couldn't find your account. Please try another email, or  if you don't have an account,  you can sign up"
 //"Incorrect Password. The password you entered is incorrect. please try again"
