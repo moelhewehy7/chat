@@ -1,8 +1,6 @@
-import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
 part 'signup_state.dart';
 
 class SignupCubit extends Cubit<SignupState> {
@@ -15,11 +13,12 @@ class SignupCubit extends Cubit<SignupState> {
         password: password,
       );
       emit(SignupSuccess());
-
-      /// send email  to chat page as a argument ,to show the data according to the signed one
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        return print('The password provided is too weak.');
+        return emit(Signupfailure(
+            errormessage1: "Error",
+            errormessage2: "'The password provided is too weak.'",
+            errormessage3: "Ok"));
       } else if (e.code == 'email-already-in-use') {
         emit(Signupfailure(
             errormessage1: "Error",
@@ -27,8 +26,7 @@ class SignupCubit extends Cubit<SignupState> {
             errormessage3: "Ok"));
       }
     } catch (e) {
-      // ignore: avoid_print
-      print(e);
+      debugPrint(e.toString());
     }
   }
 }

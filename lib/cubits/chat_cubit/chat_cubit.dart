@@ -1,10 +1,7 @@
-import 'package:meta/meta.dart';
 import 'package:scholar_chat/models/messagee.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
-import '../../constants.dart';
-
+import '../../../constants.dart';
 part 'chat_state.dart';
 
 class ChatCubit extends Cubit<ChatState> {

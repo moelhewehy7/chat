@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:scholar_chat/cubits/login_cubit/login_cubit.dart';
+import 'package:scholar_chat/firebase_options.dart';
 import 'cubits/Signup_cubit/signup_cubit.dart';
-import 'cubits/chat_cubit.dart';
+import 'cubits/chat_cubit/chat_cubit.dart';
 import 'views/chat_page.dart';
 import 'views/login_page.dart';
 import 'views/resgister_page.dart';
@@ -17,7 +18,9 @@ void main() async {
         ),
   );
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   runApp(const ScholarChat());
 }

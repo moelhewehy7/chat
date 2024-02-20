@@ -10,7 +10,6 @@ class LoginCubit extends Cubit<LoginState> {
     try {
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
-      //// send email  to chat page as a argument ,to show the data according to the signed one
       emit(LoginSuccess());
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {

@@ -13,23 +13,24 @@ Future<void> showAlert(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         title: Text(
           title,
-          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
+          style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
         ),
         content: Text(content),
-        contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
         actions: [
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).pop();
             },
+            style: ElevatedButton.styleFrom(
+              fixedSize: const Size(85, 14),
+              backgroundColor: const Color(0xFF1D1D1D),
+            ),
             child: Text(
               buttonText,
-              style: TextStyle(fontSize: 13, color: Colors.white),
+              style: const TextStyle(fontSize: 13, color: Colors.white),
               textAlign: TextAlign.center,
-            ),
-            style: ElevatedButton.styleFrom(
-              fixedSize: Size(85, 14),
-              backgroundColor: const Color.fromARGB(255, 29, 29, 29),
             ),
           ),
         ],

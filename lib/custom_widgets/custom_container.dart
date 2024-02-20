@@ -8,9 +8,11 @@ class CustomConatiner extends StatelessWidget {
   final String? text2;
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    // double width = MediaQuery.of(context).size.width;
     return Container(
       alignment: Alignment.centerLeft,
-      height: 260,
+      height: height * .30,
       width: double.infinity,
       child: Stack(
         children: [
@@ -23,11 +25,11 @@ class CustomConatiner extends StatelessWidget {
                   filter: ImageFilter.blur(
                       sigmaX: 50,
                       sigmaY:
-                          50), // blur to be applied horizontally and vertically
+                          15), // blur to be applied horizontally and vertically
                   child:
                       const SizedBox())), //used as an empty placeholder to apply constraints to the BackdropFilter
           Padding(
-            padding: const EdgeInsets.only(top: 150, left: 10),
+            padding: const EdgeInsets.only(top: 120, left: 10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

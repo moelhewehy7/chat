@@ -6,10 +6,9 @@ class Message {
 
   Message(this.messagee, this.id);
 
-  factory Message.fromJson(jsonData) {
-    // jsonData is the body that has the data
+  factory Message.fromJson(dynamic jsonData) {
     return Message(
         jsonData[kMessage] ?? '', // ?? ''This is the null-aware operator
-        jsonData["id"] ?? ""); //key = "message" elly e7na 3ayzeno w "id"
+        jsonData["id"] ?? "");
   }
 }

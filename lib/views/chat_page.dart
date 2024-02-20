@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:scholar_chat/constants.dart';
-import 'package:scholar_chat/cubits/chat_cubit.dart';
+import 'package:scholar_chat/cubits/chat_cubit/chat_cubit.dart';
 import '../custom_widgets/chat_buble.dart';
 import 'login_page.dart';
 
