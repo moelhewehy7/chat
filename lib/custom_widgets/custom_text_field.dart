@@ -9,14 +9,10 @@ class CustomTextFormField extends StatelessWidget {
       this.validator,
       this.obscureText = false})
       : super(key: key);
-
   String? label;
-
-  // it cant be Voidcallback becasue type is string
   Function(String)? onchanged;
   String? Function(String?)? validator;
   bool? obscureText;
-
   @override
   Widget build(BuildContext context) {
     return TextFormField(

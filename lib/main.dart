@@ -47,7 +47,7 @@ class ScholarChat extends StatelessWidget {
         routes: {
           Register.id: (context) => const Register(),
           LoginPage.id: (context) => const LoginPage(),
-          ChatPage.id: (context) => ChatPage()
+          ChatPage.id: (context) => const ChatPage()
         },
         initialRoute: LoginPage.id,
       ),

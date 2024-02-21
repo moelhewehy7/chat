@@ -16,7 +16,6 @@ import 'chat_page.dart';
 class LoginPage extends StatefulWidget {
   static String id = "Login";
   const LoginPage({Key? key}) : super(key: key);
-
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -50,16 +49,15 @@ class _LoginPageState extends State<LoginPage> {
           padding:
               EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
           child: SingleChildScrollView(
-            child: Column(
-              children: [
-                const CustomConatiner(
-                  text1: ("Sign in to your Account"),
-                  text2: ("Sign in to your Account"),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Form(
+            child: Column(children: [
+              const CustomConatiner(
+                text1: ("Sign in to your Account"),
+                text2: ("Sign in to your Account"),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Form(
                   key: formstate,
                   child: Padding(
                       padding: const EdgeInsets.symmetric(
@@ -184,30 +182,27 @@ class _LoginPageState extends State<LoginPage> {
                               height: height * .04,
                             ),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const Text("Dont have an account?"),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                GestureDetector(
-                                  onTap: () {
-                                    Navigator.pushNamed(context, Register.id);
-                                  },
-                                  child: const Text(
-                                    "Register",
-                                    style: TextStyle(
-                                        color:
-                                            Color.fromARGB(235, 127, 115, 106),
-                                        fontWeight: FontWeight.w500),
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  const Text("Dont have an account?"),
+                                  const SizedBox(
+                                    width: 10,
                                   ),
-                                )
-                              ],
-                            )
-                          ])),
-                )
-              ],
-            ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.pushNamed(context, Register.id);
+                                    },
+                                    child: const Text(
+                                      "Register",
+                                      style: TextStyle(
+                                          color: Color.fromARGB(
+                                              235, 127, 115, 106),
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                  )
+                                ]),
+                          ])))
+            ]),
           ),
         ),
       ),
