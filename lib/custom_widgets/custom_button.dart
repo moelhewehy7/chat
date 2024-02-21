@@ -10,9 +10,8 @@ class CustomButon extends StatelessWidget {
   String text;
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
     return SizedBox(
-      width: width,
+      width: double.infinity,
       child: ElevatedButton(
           onPressed: onpressed,
           style: ElevatedButton.styleFrom(

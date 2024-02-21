@@ -16,29 +16,32 @@ class SigninChoicesContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: height * 0.06,
-      width: width * .28,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(
-          color: const Color(0xffcbcecf),
-          width: 1,
+    return GestureDetector(
+      onTap: (() {}),
+      child: Container(
+        height: height * 0.06,
+        width: width * .3,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(
+            color: const Color(0xffcbcecf),
+            width: 1,
+          ),
         ),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(
-            image,
-            scale: 30,
-          ),
-          const SizedBox(width: 8),
-          Text(
-            text,
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-          ),
-        ],
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              image,
+              scale: 30,
+            ),
+            const SizedBox(width: 8),
+            Text(
+              text,
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+            ),
+          ],
+        ),
       ),
     );
   }

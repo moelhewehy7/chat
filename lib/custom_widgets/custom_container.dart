@@ -8,11 +8,11 @@ class CustomConatiner extends StatelessWidget {
   final String? text2;
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    // double width = MediaQuery.of(context).size.width;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Container(
       alignment: Alignment.centerLeft,
-      height: height * .30,
+      height: screenHeight * .30,
       width: double.infinity,
       child: Stack(
         children: [
@@ -36,8 +36,8 @@ class CustomConatiner extends StatelessWidget {
                 Text(
                   text1!,
                   textAlign: TextAlign.left,
-                  style: const TextStyle(
-                      fontSize: 40,
+                  style: TextStyle(
+                      fontSize: screenWidth * .08,
                       color: Colors.white,
                       fontWeight: FontWeight.w700),
                 ),
@@ -45,8 +45,8 @@ class CustomConatiner extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 5),
                   child: Text(
                     text2!,
-                    style: const TextStyle(
-                        fontSize: 15,
+                    style: TextStyle(
+                        fontSize: screenWidth * .04,
                         color: Colors.white,
                         fontWeight: FontWeight.w200),
                   ),

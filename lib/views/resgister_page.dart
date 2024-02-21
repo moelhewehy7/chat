@@ -3,11 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:scholar_chat/cubits/Signup_cubit/signup_cubit.dart';
 import 'package:scholar_chat/custom_widgets/custom_container.dart';
 import 'package:scholar_chat/views/chat_page.dart';
-import 'package:scholar_chat/custom_widgets/custom_button.dart';
-
 import '../constants.dart';
-import '../helper/showalert.dart';
+import '../custom_widgets/custom_button.dart';
 import '../custom_widgets/custom_text_field.dart';
+import '../helper/showalert.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 // ignore: must_be_immutable
@@ -26,19 +25,23 @@ class _RegisterState extends State<Register> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<SignupCubit, SignupState>(
-      listener: (context, state) {
-        if (state is SignupSuccess) {
-          Navigator.of(context)
-              .pushReplacementNamed(ChatPage.id, arguments: email);
-        }
-        if (state is Signupfailure) {
-          showAlert(context, state.errormessage1, state.errormessage2,
-              state.errormessage3);
-        }
-      },
-      builder: (context, state) {
-        return Scaffold(
+    return BlocListener<SignupCubit, SignupState>(
+        listener: (context, state) {
+          if (state is SignupSuccess) {
+            Navigator.of(context).pushNamedAndRemoveUntil(
+              ChatPage.id,
+              (route) => false, // Remove all routes below the ChatPage
+              arguments: email,
+            ); // remove all routes below the ChatPage from the navigation stack,
+            // effectively preventing the back button from appearing on the ChatPage app bar
+          }
+
+          if (state is Signupfailure) {
+            showAlert(context, state.errormessage1, state.errormessage2,
+                state.errormessage3);
+          }
+        },
+        child: Scaffold(
           resizeToAvoidBottomInset: false,
           backgroundColor: kPrimaryColor,
           body: SingleChildScrollView(
@@ -99,24 +102,29 @@ class _RegisterState extends State<Register> {
                             const SizedBox(
                               height: 20,
                             ),
-                            if (state is SignupLoading)
-                              const SpinKitCircle(
-                                color: Color(0xFF386780),
-                                size: 20.0,
-                              )
-                            else
-                              CustomButon(
-                                onpressed: () async {
-                                  if (formstate.currentState!.validate()) {
-                                    BlocProvider.of<SignupCubit>(context)
-                                        .signUp(
-                                      email: email!,
-                                      password: password!,
-                                    );
-                                  }
-                                },
-                                text: "Register",
-                              ),
+                            BlocBuilder<SignupCubit, SignupState>(
+                              builder: (context, state) {
+                                if (state is SignupLoading) {
+                                  return const SpinKitCircle(
+                                    color: Color(0xFF386780),
+                                    size: 20.0,
+                                  );
+                                } else {
+                                  return CustomButon(
+                                    onpressed: () async {
+                                      if (formstate.currentState!.validate()) {
+                                        BlocProvider.of<SignupCubit>(context)
+                                            .signUp(
+                                          email: email!,
+                                          password: password!,
+                                        );
+                                      }
+                                    },
+                                    text: "Register",
+                                  );
+                                }
+                              },
+                            ),
                             const SizedBox(
                               height: 20,
                             ),
@@ -144,8 +152,6 @@ class _RegisterState extends State<Register> {
                           ]))),
             ]),
           ),
-        );
-      },
-    );
+        ));
   }
 }

@@ -4,11 +4,10 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:scholar_chat/custom_widgets/custom_container.dart';
 import 'package:scholar_chat/helper/showalert.dart';
 import 'package:scholar_chat/views/resgister_page.dart';
-import 'package:scholar_chat/custom_widgets/custom_button.dart';
-
 import '../constants.dart';
 import '../cubits/chat_cubit/chat_cubit.dart';
 import '../cubits/login_cubit/login_cubit.dart';
+import '../custom_widgets/custom_button.dart';
 import '../custom_widgets/custom_text_field.dart';
 import '../custom_widgets/signin_choices_container.dart';
 import 'chat_page.dart';
@@ -133,11 +132,8 @@ class _LoginPageState extends State<LoginPage> {
                                   );
                                 }
                               },
-                            ), //When the state is LoginLoading,
-                            //the SpinKitCircle widget is returned, indicating that the loading indicator should be shown. Otherwise,
-                            //when the state is not LoginLoading,
-                            //the CustomButton widget is returned, indicating that the button should be shown.
-                            const SizedBox(height: 40),
+                            ),
+                            SizedBox(height: height * .07),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
@@ -166,8 +162,8 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                               ],
                             ),
-                            const SizedBox(
-                              height: 40,
+                            SizedBox(
+                              height: height * .07,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -184,8 +180,8 @@ class _LoginPageState extends State<LoginPage> {
                                     width: width),
                               ],
                             ),
-                            const SizedBox(
-                              height: 40,
+                            SizedBox(
+                              height: height * .04,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
