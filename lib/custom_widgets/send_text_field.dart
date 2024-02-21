@@ -42,7 +42,8 @@ class SendTextField extends StatelessWidget {
                 ),
                 child: ElevatedButton(
                   onPressed: () {
-                    final messageText = controller.text;
+                    final messageText = controller.text; 
+                    //withoud messageText wehen we press send it will always send space message
                     if (messageText.isNotEmpty) {
                       BlocProvider.of<ChatCubit>(context).sendmessage(
                         message: messageText,
