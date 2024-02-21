@@ -147,7 +147,7 @@ class _LoginPageState extends State<LoginPage> {
                                       'Or login with',
                                       style: TextStyle(
                                         fontWeight: FontWeight.w400,
-                                        fontSize: 16,
+                                        fontSize: 15,
                                       ),
                                     ),
                                   ),

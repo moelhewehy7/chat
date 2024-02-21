@@ -48,7 +48,7 @@ class _ChatPageState extends State<ChatPage> {
                   Image.asset(kscholarlogo, height: 55),
                   const Text(
                     "Scholar chat",
-                    style: TextStyle(color: Colors.black),
+                    style: TextStyle(color: Colors.black, fontSize: 16),
                   )
                 ])),
             body: Stack(children: [

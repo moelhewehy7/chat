@@ -26,8 +26,9 @@ class CustomTextFormField extends StatelessWidget {
         label: Text(
           label!,
           style: const TextStyle(
-              color: Color.fromARGB(255, 45, 47, 47),
-              fontWeight: FontWeight.w300),
+              fontSize: 15,
+              color: Color.fromARGB(211, 45, 47, 47),
+              fontWeight: FontWeight.w100),
         ),
         focusedBorder: buildborder(color: const Color(0xFF363737)),
         enabledBorder: buildborder(color: const Color(0xffcbcecf)),

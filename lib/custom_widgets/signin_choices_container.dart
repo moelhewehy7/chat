@@ -20,7 +20,7 @@ class SigninChoicesContainer extends StatelessWidget {
       onTap: (() {}),
       child: Container(
         height: height * 0.06,
-        width: width * .3,
+        width: width * .35,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
@@ -38,7 +38,7 @@ class SigninChoicesContainer extends StatelessWidget {
             const SizedBox(width: 8),
             Text(
               text,
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
             ),
           ],
         ),

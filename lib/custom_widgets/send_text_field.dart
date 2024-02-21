@@ -61,17 +61,17 @@ class SendTextField extends StatelessWidget {
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.all(12.0),
+                    padding: const EdgeInsets.only(left: 2),
                     backgroundColor: Colors.white,
                     shape: const CircleBorder(),
                     elevation: 2,
                   ),
-                  child: const IconTheme(
+                  child: IconTheme(
                     data: IconThemeData(
                       color: Colors.black,
-                      size: 22,
+                      size: width * 0.05,
                     ),
-                    child: Icon(Icons.send),
+                    child: const Center(child: Icon(Icons.send)),
                   ),
                 ),
               ),
