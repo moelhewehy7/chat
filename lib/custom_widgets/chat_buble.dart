@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
 import 'package:scholar_chat/models/messagee.dart';
 
 class ChatBuble extends StatelessWidget {
@@ -18,19 +20,32 @@ class ChatBuble extends StatelessWidget {
         margin: const EdgeInsets.only(right: 10, top: 2, left: 10),
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(32),
-            topRight: Radius.circular(32),
-            bottomLeft: Radius.circular(32),
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+            bottomLeft: Radius.circular(20),
           ),
           color: Color.fromARGB(255, 28, 119, 245),
         ),
-        child: Text(
-          message.messagee,
-          style: const TextStyle(
-            fontSize: 16,
-            fontFamily: "Roboto",
-            color: Colors.white,
-          ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Text(
+              message.messagee,
+              style: const TextStyle(
+                fontSize: 16,
+                fontFamily: "Roboto",
+                color: Colors.white,
+              ),
+            ),
+            Text(
+              DateFormat('h:mm a').format(DateTime.parse(message.date)),
+              style: const TextStyle(
+                fontSize: 14,
+                fontFamily: "Roboto",
+                color: Color.fromARGB(170, 255, 255, 255),
+              ),
+            )
+          ],
         ),
       ),
     );
@@ -42,7 +57,7 @@ class ChatBubleForFriend extends StatelessWidget {
     Key? key,
     required this.message,
   }) : super(key: key);
-  final Message? message;
+  final Message message;
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -54,13 +69,29 @@ class ChatBubleForFriend extends StatelessWidget {
         decoration: const BoxDecoration(
             color: Color(0xffffffff),
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(32),
-              topRight: Radius.circular(32),
-              bottomRight: Radius.circular(32),
+              topLeft: Radius.circular(20),
+              topRight: Radius.circular(20),
+              bottomRight: Radius.circular(20),
             )),
-        child: Text(
-          message!.messagee,
-          style: const TextStyle(fontSize: 16, fontFamily: "Roboto"),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Text(
+              message.messagee,
+              style: const TextStyle(
+                fontSize: 16,
+                fontFamily: "Roboto",
+              ),
+            ),
+            Text(
+              DateFormat('h:mm a').format(DateTime.parse(message.date)),
+              style: const TextStyle(
+                fontSize: 14,
+                fontFamily: "Roboto",
+                color: Color(0xFFA0A0A0),
+              ),
+            )
+          ],
         ),
       ),
     );
