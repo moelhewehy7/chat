@@ -28,7 +28,8 @@ A chat app between two users, using Firebase for the database and Rive for anima
 - Allow multiple users to chat.
 - Implement search functionality for finding specific users.
 - Add message editing feature.
-
+- sign in using their existing Facebook or Google accounts
+ 
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request.
