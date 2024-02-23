@@ -4,9 +4,9 @@ A chat app between two users, using Firebase for the database and Rive for anima
 
 ## Screenshots
 
-![Image 1](https://github.com/moelhewehy7/chat-app-bloc/assets/130074772/8fc4a310-47ec-47f3-bd30-61b3f61cc779){:height="300" width="150"}
-![Image 2](https://github.com/moelhewehy7/chat-app-bloc/assets/130074772/8f44a74e-1045-412f-8256-4345d18936ed){:height="300" width="150"}
-![Image 3](https://github.com/moelhewehy7/chat-app-bloc/assets/130074772/93fc1aaa-7eae-4bc3-afb5-5a141db3cede){:height="300" width="150"}
+<img src="https://github.com/moelhewehy7/chat-app-bloc/assets/130074772/8fc4a310-47ec-47f3-bd30-61b3f61cc779" height="300" width="150">
+<img src="[https://github.com/moelhewehy7/chat-app-bloc/assets/130074772/8fc4a310-47ec-47f3-bd30-61b3f61cc779](https://github.com/moelhewehy7/chat-app-bloc/assets/130074772/8f44a74e-1045-412f-8256-4345d18936ed)" height="300" width="150">
+<img src="[https://github.com/moelhewehy7/chat-app-bloc/assets/130074772/8fc4a310-47ec-47f3-bd30-61b3f61cc779](https://github.com/moelhewehy7/chat-app-bloc/assets/130074772/93fc1aaa-7eae-4bc3-afb5-5a141db3cede)" height="300" width="150">
 
 
 ## Installation
